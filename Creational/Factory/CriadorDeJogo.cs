@@ -13,7 +13,7 @@ public static class CriadorDeJogo
         
         Console.Write("\nOpção: ");
         var personagemEscolhido = Console.ReadLine();
-        CriadorDePersonagem? criadorDePersonagem = null;
+        CriadorDePersonagem? criadorDePersonagem;
 
         switch (personagemEscolhido)
         {
@@ -31,6 +31,6 @@ public static class CriadorDeJogo
                 return;
         }
         
-        criadorDePersonagem?.EntrarNoJogo();
+        criadorDePersonagem.EntrarNoJogo();
     }
 }
