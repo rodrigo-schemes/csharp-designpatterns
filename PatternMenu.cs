@@ -1,17 +1,13 @@
-﻿using csharp_designpatterns.Creational.AbstractFactory;
-using csharp_designpatterns.Creational.FactoryMethod;
-using csharp_designpatterns.Creational.Singleton;
-
-namespace csharp_designpatterns;
+﻿namespace csharp_designpatterns;
 
 public static class PatternMenu
 {
     private static readonly List<IPatternDemo> Patterns =
-    [
-        new SingletonDemo(),
-        new FactoryMethodDemo(),
-        new AbstractFactoryDemo()
-    ];
+        typeof(IPatternDemo).Assembly.GetTypes()
+            .Where(type => typeof(IPatternDemo).IsAssignableFrom(type) 
+                           && type is { IsInterface: false, IsAbstract: false })
+            .Select(type => (IPatternDemo)Activator.CreateInstance(type)!)
+            .ToList();
 
     public static async Task ShowAsync()
     {
