@@ -1,10 +1,10 @@
-﻿using csharp_designpatterns.Creational.Factory.Personagens;
+﻿using csharp_designpatterns.Creational.FactoryMethod.Personagens;
 
-namespace csharp_designpatterns.Creational.Factory;
+namespace csharp_designpatterns.Creational.FactoryMethod;
 
 public static class CriadorDeJogo
 {
-    public static void Executar()
+    public static void Execute()
     {
         Console.WriteLine("Escolha seu personagem: " +
                           "\n 1. Guerreiro" +

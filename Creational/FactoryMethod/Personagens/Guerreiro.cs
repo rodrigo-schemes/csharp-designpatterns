@@ -1,4 +1,4 @@
-﻿namespace csharp_designpatterns.Creational.Factory.Personagens;
+﻿namespace csharp_designpatterns.Creational.FactoryMethod.Personagens;
 
 public class Guerreiro : IPersonagem
 {

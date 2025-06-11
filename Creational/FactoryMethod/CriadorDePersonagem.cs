@@ -1,8 +1,8 @@
-﻿namespace csharp_designpatterns.Creational.Factory;
+﻿namespace csharp_designpatterns.Creational.FactoryMethod;
 
 public abstract class CriadorDePersonagem
 {
-    public abstract IPersonagem CriarPersonagem();
+    protected abstract IPersonagem CriarPersonagem();
 
     public void EntrarNoJogo()
     {

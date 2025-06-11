@@ -4,16 +4,16 @@ namespace csharp_designpatterns.Creational.Singleton;
 
 public sealed class PlacarGlobal
 {
-    private static readonly Lazy<PlacarGlobal> _instancia = new(() => new PlacarGlobal());
+    private static readonly Lazy<PlacarGlobal> InstanciaPlacar = new(() => new PlacarGlobal());
 
     private int _pontosDisponiveis = 500;
-    private static readonly Lock _lock = new();
+    private static readonly Lock LockThread = new();
 
     private readonly ConcurrentDictionary<int, int> _pontuacaoJogadores = new();
 
     private PlacarGlobal() { }
 
-    public static PlacarGlobal Instancia => _instancia.Value;
+    public static PlacarGlobal Instancia => InstanciaPlacar.Value;
 
     /// <summary>
     /// Tenta retirar de 1 a 10 pontos do total disponível para o jogador especificado.
@@ -23,7 +23,7 @@ public sealed class PlacarGlobal
     private bool ObterPontos(int jogadorId)
     {
         // Garante que apenas uma thread por vez execute esse trecho crítico
-        lock (_lock)
+        lock (LockThread)
         {
             // Se não houver mais pontos disponíveis, a jogada falha
             if (_pontosDisponiveis <= 0)
@@ -55,7 +55,7 @@ public sealed class PlacarGlobal
         }
     }
 
-    public async Task ExecutarAsync()
+    public async Task ExecuteAsync()
     {
         Console.WriteLine("### Iniciando partida! ###");
 
