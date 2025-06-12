@@ -13,6 +13,7 @@ Padrões que lidam com a **criação de objetos**, encapsulando a lógica de ins
 - [Abstract Factory](./Creational/AbstractFactory/Readme.md) – Criação de times esportivos com diferentes posições, baseado no esporte escolhido.
 - [Builder](./Creational/Builder/Readme.md) – Montagem de lanches (X-Salada, X-Burger, HotDog) com etapas obrigatórias usando Step Builder.
 - [Factory Method](./Creational/FactoryMethod/Readme.md) – Exemplo lúdico com criação de personagens em um jogo.
+- [Prototype](./Creational/Prototype/Readme.md) – Evolução de personagem por períodos históricos usando clonagem profunda (Deep Copy).
 - [Singleton](./Creational/Singleton/Readme.md) – Controle de acesso a uma única instância global (ex: placar global).
 
 ---

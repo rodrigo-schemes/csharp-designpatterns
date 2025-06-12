@@ -6,7 +6,6 @@ public class AbstractFactoryDemo : IPatternDemo
     
     public Task ExecuteAsync()
     {
-        Console.WriteLine("\n--- Executando Abstract Factory ---\n");
         TeamManager.Execute();
         return Task.CompletedTask;
     }

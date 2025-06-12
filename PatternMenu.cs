@@ -36,6 +36,7 @@ public static class PatternMenu
                 index >= 1 && index <= Patterns.Count)
             {
                 var pattern = Patterns[index - 1];
+                Console.WriteLine($"\n--- Executando {pattern.Name} ---\n");
                 await pattern.ExecuteAsync();
             }
             else

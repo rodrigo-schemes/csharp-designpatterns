@@ -6,7 +6,6 @@ public class FactoryMethodDemo : IPatternDemo
     
     public Task ExecuteAsync()
     {
-        Console.WriteLine("\n--- Executando Factory Method ---\n");
         CriadorDeJogo.Execute();
         return Task.CompletedTask;
     }
